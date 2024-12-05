@@ -5,7 +5,7 @@
 <main class="container-main">
     <div class="box-conteudo">
         <h1>Cadastrar Livro</h1>
-        <form method="post" accept="@Url.Action("Cadastrar")"enctype = "multipart/form-data">
+        <form method="post" action="@Url.Action("Cadastrar")" enctype="multipart/form-data">
             <div class="form-linha">
                 <div class="form-group-name">
                     <label class="form-label" for="Nome">Nome</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="Editora">Editora</label>
-                    <input type="text" name="Editora" class="form-input" placeholder=""> 
+                    <input type="text" name="Editora" class="form-input" placeholder="">
                 </div>
             </div>
 
@@ -41,15 +41,16 @@
                     <label class="form-label" for="categoria">Categoria</label>
                     <ul>
 
-                        @foreach(Categoria categoria in ViewBag.Categoria ){
+                        @foreach (Categoria categoria in ViewBag.Categoria)
+                        {
 
-                        
-                        
-                        <li>
-                            <input name="Categoria" type="checkbox" value="@categoria.CategoriaID">
-                            <label class="form-label-categoria" for="Categoria">@categoria.Nome</label>
-                        </li>
-                      
+
+
+                            <li>
+                                <input name="Categoria" type="checkbox" value="@categoria.CategoriaID">
+                                <label class="form-label-categoria" for="Categoria">@categoria.Nome</label>
+                            </li>
+
                         }
 
                     </ul>
